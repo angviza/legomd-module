@@ -1,0 +1,12 @@
+{
+  "host" : "192.168.0.70",
+  "port" : 5432,
+  "maxPoolSize" : 100,
+  "username" : "admin",
+  "password" : "123456",
+  "database" : "test",
+  "charset" : "utf-8",
+  "queryTimeout" : "2000"
+//  "sslMode" : <"disable"|"prefer"|"require"|"verify-ca"|"verify-full">,
+//  "sslRootCert" : <path to file with certificate>
+}

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-module
+  namespace: legomd-module
+spec:
+  replicas: 3
+  selector:
+      matchLabels:
+        app: user-module
+  template:
+    metadata:
+      labels:
+        app: user-module
+    spec:
+      containers:
+      - name: user-module
+        image: gitlab.rdquinn.top:5000/user-module:latest
+        ports:
+        - containerPort: 9000

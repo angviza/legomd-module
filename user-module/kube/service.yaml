@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: user-module
+  namespace: legomd-module
+spec:
+  type: NodePort
+  selector:
+    app: user-module
+  ports:
+  - protocol: TCP
+    port: 9000
+    nodePort: 32180
+    targetPort: 9000

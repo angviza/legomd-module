@@ -1,0 +1,18 @@
+{
+  "instances": 2,
+  "api.gateway.http.port": 8787,
+  "api.gateway.http.address": "0.0.0.0",
+  "circuit-breaker": {
+    "name": "api-gateway-cb",
+    "timeout": 10000,
+    "max-failures": 5
+  },
+  "provider_class": "io.vertx.ext.jdbc.spi.impl.HikariCPDataSourceProvider",
+  "jdbcUrl": "jdbc:postgresql://192.168.0.70:5432/eflab",
+  "driverClassName": "org.postgresql.Driver",
+  "username": "admin",
+  "password": "123456",
+  "maximumPoolSize": 50,
+  "min_pool_size": 10,
+  "tcpKeepAlive ": true
+}

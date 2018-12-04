@@ -1,0 +1,99 @@
+{
+  "mode": "DEV",
+  "web": {
+    "http_port": 9000,
+    "sessionDisabled": false,
+    "version": "V2.0",
+    "swagger": {
+      "enable": true,
+      "title": "User Service Rest Api Doc",
+      "version": "v2.3",
+      "description": "User Service API",
+      "termsOfServiceUrl": "termsOfServiceUrl",
+      "contact": "Quinn",
+      "license": "Quinn",
+      "licenseUrl": "licenseUrl",
+      "filterClass": "filterClass",
+      "host": "192.168.0.102:9000",
+      "basePath": "/"
+    }
+  },
+  "cluster": {
+    "enable": true,
+    "service_host": "127.0.0.1",
+    "service_ha": false,
+    "service_ha_group": "webg",
+    "registry_name":"webtest"
+  },
+  "other": {
+    "weixin.appid" : "wxf98bdcd6150b7e33",
+    "weixin.secret" : "35b319c6a9aee16e3977bf0d0d24ff7e"
+  },
+  "postgresql": {
+    "host" : "192.168.0.70",
+    "port" : 5432,
+    "maxPoolSize" : 50,
+    "username" : "postgres",
+    "password" : "123456",
+    "database" : "postgres",
+    "charset" : "UTF-8",
+    "queryTimeout" : 10000
+  },
+  "redis":{
+    "host": "localhost",
+    "port": 6379,
+    "password": "h123456"
+  },
+  "mongodb": {
+    // Single Cluster Settings
+    "host" : "192.168.0.70", // string
+    "port" : 27017,      // int
+    // Multiple Cluster Settings
+    /*"hosts" : [
+      {
+        "host" : "cluster1", // string
+        "port" : 27000       // int
+      },
+      {
+        "host" : "cluster2", // string
+        "port" : 28000       // int
+      }
+    ],*/
+    //"replicaSet" :  "foo",    // string
+    "serverSelectionTimeoutMS" : 30000, // long
+    // Connection Pool Settings
+    "maxPoolSize" : 50,                // int
+    "minPoolSize" : 25,                // int
+    "maxIdleTimeMS" : 300000,          // long
+    "maxLifeTimeMS" : 3600000,         // long
+    "waitQueueMultiple"  : 10,         // int
+    "waitQueueTimeoutMS" : 10000,      // long
+    "maintenanceFrequencyMS" : 2000,   // long
+    "maintenanceInitialDelayMS" : 500, // long
+    // Credentials / Auth
+//    "username"   : "shop_user",     // string
+//    "password"   : "h123456", // string
+    "db_name": "vertx_shop",
+    //"authSource" : "shop_message",   // string
+    // Auth mechanism
+    //"authMechanism"     : "GSSAPI",        // string
+    //"gssapiServiceName" : "myservicename", // string
+    // Socket Settings
+    "connectTimeoutMS" : 300000, // int
+    "socketTimeoutMS"  : 100000, // int
+    "sendBufferSize"    : 8192,  // int
+    "receiveBufferSize" : 8192,  // int
+    "keepAlive" : true           // boolean
+  },
+  "es": {
+    "address":"eb.elasticsearch",
+    "transportAddresses":[
+      {
+        "hostname":"localhost",
+        "port":9300
+      }
+    ],
+    "cluster_name":"vertx_shop",
+    "client_transport_sniff":false
+  }
+}

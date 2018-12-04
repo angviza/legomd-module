@@ -1,0 +1,40 @@
+{
+  // Single Cluster Settings
+  "host" : "192.168.0.70", // string
+  "port" : 27017,      // int
+//  "replicaSet" :  "foo",    // string
+  "serverSelectionTimeoutMS" : 30000, // long
+  // Connection Pool Settings
+  "maxPoolSize" : 50,                // int
+  "minPoolSize" : 25,                // int
+  "maxIdleTimeMS" : 300000,          // long
+  "maxLifeTimeMS" : 3600000,         // long
+  "waitQueueMultiple"  : 10,         // int
+  "waitQueueTimeoutMS" : 10000,      // long
+  "maintenanceFrequencyMS" : 2000,   // long
+  "maintenanceInitialDelayMS" : 500, // long
+
+//  // Credentials / Auth
+//  "username"   : "john",     // string
+//  "password"   : "passw0rd", // string
+  "authSource" : "test",   // string
+  // Auth mechanism
+//  "authMechanism"     : "GSSAPI",        // string
+//  "gssapiServiceName" : "myservicename", // string
+
+  // Socket Settings
+  "connectTimeoutMS" : 300000, // int
+  "socketTimeoutMS"  : 100000, // int
+  "sendBufferSize"    : 8192,  // int
+  "receiveBufferSize" : 8192,  // int
+  "keepAlive" : true,           // boolean
+
+  // Heartbeat socket settings
+  "heartbeat.socket" : {
+    "connectTimeoutMS" : 300000, // int
+    "socketTimeoutMS"  : 100000, // int
+    "sendBufferSize"    : 8192,  // int
+    "receiveBufferSize" : 8192,  // int
+    "keepAlive" : true           // boolean
+  }
+}
