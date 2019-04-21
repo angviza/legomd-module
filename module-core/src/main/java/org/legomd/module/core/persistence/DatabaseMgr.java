@@ -32,8 +32,13 @@ public class DatabaseMgr {
     }
 
     private static JsonObject getConfig(JsonObject config, DB db) {
-        if (config == null && DB.LEGOMD_DOC.equals(db))
+        if(config==null)
+            return new JsonObject();
+        if (DB.LEGOMD_DOC.equals(db))
             config = ConfigManager.loadJson(ConfigManager.MONGO_CONF);
+        else if(DB.LEGOMD_PG.equals(db)) {
+            config = ConfigManager.loadJson(ConfigManager.PGSQL_CONF);
+        }
         return config;
     }
 }

@@ -4,9 +4,13 @@ import io.vertx.reactivex.core.AbstractVerticle;
 import org.legomd.framework.core.ServiceProxy;
 import org.legomd.module.core.persistence.DB;
 import org.legomd.module.core.persistence.DatabaseMgr;
+import org.legomd.module.user.handler.OriginHandler;
 import org.legomd.module.user.handler.UserHandler;
+import org.legomd.module.user.persistence.OriginDao;
 import org.legomd.module.user.persistence.UserDao;
+import org.legomd.module.user.persistence.impl.OriginDaoImpl;
 import org.legomd.module.user.persistence.impl.UserDaoImpl;
+import org.legomd.module.user.service.OriginHandlerImpl;
 import org.legomd.module.user.service.UserHandlerImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,9 +30,11 @@ public class UserService extends AbstractVerticle {
     }
 
     public static void init(boolean pub) {
-        DatabaseMgr.init(DB.LEGOMD_DOC);
+        DatabaseMgr.init(DB.LEGOMD_PG);
         ServiceProxy.register(UserDao.class, new UserDaoImpl());
+        ServiceProxy.register(OriginDao.class, new OriginDaoImpl());
         ServiceProxy.register(UserHandler.class, new UserHandlerImpl(), pub);
+        ServiceProxy.register(OriginHandler.class, new OriginHandlerImpl(), pub);
     }
 
 }
